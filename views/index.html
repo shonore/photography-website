@@ -1,0 +1,30 @@
+{{> header }}
+  <main id="main">
+    <section id="hero" class="relative" style="background-image: url({{ page.metafield.hero.imgix_url }}?w=1200);">
+      <div class="absolute w-100p h-100p" style="background-color: #000; opacity: .5; z-index: 0;"></div>
+      <div class="container text-center pt-150 relative" style="z-index: 1;">
+        <h1 class="font-40">
+          {{ page.metafield.headline.value }}
+        </h1>
+        <h2 class="font-50">
+          {{ page.metafield.subheadline.value }}
+        </h2>
+      </div>
+    </section>
+    <section id="content" class="pt-40 pb-40 bg-fff">
+      <div class="container">
+        {{# page.metafield.blurbs.children }}
+          <div class="col-sm-4 text-center">
+            <div class="mb-20 font-26">{{ value }}</div>
+            <div class="mb-20">
+              <div class="w-300 h-300 img-circle center-block" style="background-image: url('{{ children.0.imgix_url }}?w=600'); background-size: cover; background-position: center;"></div>
+            </div>
+            <h3 class="font-16 pt-15">{{ children.1.value }}</h3>
+            <div class="mb-20 font-16">{{ children.2.value }}</div>
+          </div>
+        {{/ page.metafield.blurbs.children }}
+      </div>
+      <div class="clearfix"></div>
+    </section>
+  </main>
+{{> footer }}

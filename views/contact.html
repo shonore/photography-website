@@ -1,0 +1,56 @@
+{{> header }}
+  <main id="main">
+    {{# page.metafield.hero.value }}
+      <section id="hero" class="relative" style="background-image: url({{ page.metafield.hero.imgix_url }}?w=1200);">
+        <div class="absolute w-100p h-100p" style="background-color: #000; opacity: .5; z-index: 0;"></div>
+        <div class="container text-center pt-180 relative" style="z-index: 1;">
+          <h2 class="font-40">
+            {{ page.metafield.headline.value }}
+          </h2>
+          <h3 class="font-50">
+            {{ page.metafield.subheadline.value }}
+          </h3>
+        </div>
+      </section>
+    {{/ page.metafield.hero.value }}
+    <div class="container mb-40">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="mb-20">
+            <h1>{{ page.title }}</h1>
+          </div>
+          {{{ page.content }}}
+        </div>
+        <div class="col-sm-6 pt-40">
+          <form id="contact_form">
+            <div class="form-group form-group--name">
+              <label>Name</label>
+              <input name="full_name" type="text" class="form-control input-lg" placeholder="Enter your full name">
+            </div>
+            <div class="form-group form-group--email">
+              <label>Email</label>
+              <input name="email" type="text" class="form-control input-lg" placeholder="Enter your email address">
+            </div>
+            <div class="form-group form-group--phone">
+              <label>Phone (Optional)</label>
+              <input name="phone" type="text" class="form-control input-lg phone-mask" placeholder="Enter your phone number">
+            </div>
+            <div class="form-group form-group--message">
+              <label>Message</label>
+              <textarea name="message" style="height: 150px" class="form-control input-lg" placeholder="Enter a message"></textarea>
+            </div>
+            <div class="alert alert-success success-message hidden">
+              {{ page.metafield.contact_form_success_message.value }}
+            </div>
+            <div class="alert alert-danger error-message hidden">
+              Error
+            </div>
+            <div class="form-group mt-20">
+              <button class="btn btn-primary btn-lg submit-btn" type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+{{> footer }}
